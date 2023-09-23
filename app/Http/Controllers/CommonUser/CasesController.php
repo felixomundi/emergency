@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\CommonUser;
 
 use App\Http\Controllers\Controller;
+use App\Models\County;
 use Illuminate\Http\Request;
 
 class CasesController extends Controller
@@ -11,6 +12,7 @@ class CasesController extends Controller
         return view("user.cases.index");
     }
     public function create(){
-        return view("user.cases.create");
+        $counties = County::all();
+        return view("user.cases.create", compact("counties"));
     }
 }

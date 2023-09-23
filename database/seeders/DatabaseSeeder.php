@@ -5,7 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\UserSeed;
-
+use Database\Seeders\CountySeeder;
+use Database\Seeders\SubCountySeeder;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -17,6 +18,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UserSeed::class,
+            CountySeeder::class,
+            SubCountySeeder::class,
         ]);
         
     }

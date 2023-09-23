@@ -54,12 +54,15 @@
 
 
 
-<div class="form-group col-md-4">
+<div class="form-group col-md-6">
 <label for="county">County</span></label>
 <select  class="form-control @error('county') is-invalid @enderror" name="county" id="county" >
 <option value="">Select County</option>
-<option value="0" {{old('county') == '0' ? "selected" : ""}}>Active</option>
-<option value="1" {{old('county') == '1' ? "selected" : "" }}>Inactive</option>
+@forelse ($counties as $county)
+<option value="{{$county->id}}" {{old('county') == $county->id ? "selected" : ""}}>{{$county->name}}</option>    
+@empty
+    
+@endforelse
 </select>
 @error('county')
 <span class="invalid-feedback" role="alert">
@@ -68,7 +71,7 @@
 @enderror
 </div>
 
-<div class="form-group col-md-4">
+<div class="form-group col-md-6">
 <label for="sub_county">Sub County</span></label>
 <select  class="form-control @error('sub_county') is-invalid @enderror" name="sub_county" id="sub_county" >
 <option value="">Select Sub County</option>

@@ -34,6 +34,9 @@ class LoginController extends Controller
             return redirect("/admin/dashboard");
         }       
         else if(Auth::user()->role_as == 0){
+            return redirect("/user/dashboard");
+        }
+        else{
             return redirect("/");
         }
       

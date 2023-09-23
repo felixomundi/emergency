@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CountyController;
 use App\Http\Controllers\CommonUser\CasesController;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
@@ -8,7 +9,7 @@ use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EmailContactController;
 use App\Http\Controllers\CommonUser\UserDashboardController;
-
+use App\Http\Controllers\Admin\SubCountyController;
 Auth::routes(["verify" => true,"register"=>true]);
 
 Route::get("/", [App\Http\Controllers\HomeController::class, 'index']);
@@ -45,6 +46,23 @@ Route::controller(EmailContactController::class)->group(function (){
     Route::get("/contacts/{slug}", "readmail");
     Route::get("/contacts/{slug}/reply", "reply");
     Route::put("/contacts/{slug}/reply", "replyEmail");
+});
+
+Route::controller(CountyController::class)->group(function () {
+    Route::get("/counties", "index");
+    Route::get("/counties/create", "create");
+    Route::post("/counties/create", "store");
+    Route::get("/counties/{id}/edit", "edit");
+    Route::put("/counties/{id}/edit", "update");    
+});
+
+
+Route::controller(SubCountyController::class)->group(function () {
+    Route::get("/sub-counties", "index");
+    Route::get("/sub-counties/create", "create");
+    Route::post("/sub-counties/create", "store");
+    Route::get("/sub-counties/{id}/edit", "edit");
+    Route::put("/sub-counties/{id}/edit", "update");    
 });
 
 
