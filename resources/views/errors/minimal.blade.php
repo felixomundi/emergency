@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>@yield("title") | Kadesea Agency</title>
+  <title>@yield("title") | {{config("app.name")}}</title>
   <link rel="icon" href="/logo/logo.jpg" size="32*32">
 
   <!-- Google Font: Source Sans Pro -->
@@ -45,8 +45,8 @@
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="/" class="brand-link">
-      <img src="/logo/logo.jpg" alt="Kadesea Agency" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Kadesea Agency</span>
+      <img src="/logo/logo.jpg" alt="{{config("app.name")}}" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">{{config("app.name")}}</span>
     </a>
 
     <!-- Sidebar -->
@@ -115,7 +115,7 @@
   <footer class="main-footer">
 
     <!-- Default to the left -->
-    <strong>Copyright &copy; {{ date("Y")}} <a href="{{config("app.url")}}">Manageschool Kadesea Agency</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; {{ date("Y")}} <a href="{{config("app.url")}}">{{config("app.name")}}</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

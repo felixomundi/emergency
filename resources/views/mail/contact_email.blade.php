@@ -66,7 +66,7 @@
 
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; {{ date("Y")}}<a href="https://www.kadesea.co.ke"> Kadesea Agency Limited</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; {{ date("Y")}}<a href="{{config("app.url")}}"> {{config("app.name")}}</a>.</strong> All rights reserved.
   </footer>
 
 

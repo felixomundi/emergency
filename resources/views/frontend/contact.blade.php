@@ -1,6 +1,6 @@
 @extends("layouts.app")
 @section("seo")
-<title>Contact Support Page | Kadesea Agency</title>
+<title>Contact Support Page | {{config("app.name")}}</title>
 @endsection
 @section("content")
 

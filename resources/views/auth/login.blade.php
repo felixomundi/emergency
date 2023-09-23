@@ -23,9 +23,7 @@
           >
             <option value="">Select</option>
             <option value="omundifelix30@gmail.com">Admin</option>
-            <option value="manager@gmail.com">Manager</option>
             <option value="fomundi34@gmail.com">User</option>
-            <option value="accountant@gmail.com">Accountant</option>
           </select>
           {{-- <input id="email" type="email" placeholder="Your Email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> --}}
 

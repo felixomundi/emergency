@@ -1,7 +1,7 @@
 @extends("layouts.dashboard")
 
 @section("seo")
-<title>Admin Profile Page | Kadesea Agency </title>
+<title>Admin Profile Page | {{config("app.name")}} </title>
 @endsection
 
 

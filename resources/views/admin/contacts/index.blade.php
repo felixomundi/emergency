@@ -1,7 +1,7 @@
 @extends("layouts.dashboard")
 
 @section("seo")
-<title>Admin Contacts Inbox | Kadesea Agency </title>
+<title>Admin Contacts Inbox | {{config("app.name")}} </title>
 @endsection
 
 @section("styles")

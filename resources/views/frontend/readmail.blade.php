@@ -1,6 +1,6 @@
 @extends("layouts.app")
 @section("seo")
-<title>Read Query {{$contact->subject}} | Kadesea Agency</title>
+<title>Read Query {{$contact->subject}} | {{config("app.name")}}</title>
 @endsection
 @section("content")
  <!-- Content Wrapper. Contains page content -->

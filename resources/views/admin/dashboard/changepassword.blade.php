@@ -1,7 +1,7 @@
 @extends("layouts.dashboard")
 
 @section("seo")
-<title>Admin Change Password | Kadesea Agency </title>
+<title>Admin Change Password | {{config("app.name")}}</title>
 @endsection
 
 

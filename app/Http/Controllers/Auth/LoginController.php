@@ -32,16 +32,11 @@ class LoginController extends Controller
     protected function authenticated(){
         if(Auth::user()->role_as == 1){
             return redirect("/admin/dashboard");
-        }
-        else if(Auth::user()->role_as == 3){
-            return redirect("/manager/dashboard");
-        }
+        }       
         else if(Auth::user()->role_as == 0){
-            return redirect("/user/dashboard");
-        }
-        else{
             return redirect("/");
         }
+      
     }
 
 
@@ -53,11 +48,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-
-
         $this->middleware('guest')->except('logout');
 
-
-        // $this->middleware('guest')->except('logout');
     }
 }
