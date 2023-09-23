@@ -1,0 +1,29 @@
+{
+    "private": true,
+    "scripts": {
+        "nodemon": "nodemon index.js",
+        "dev": "npm run development",
+        "build": "npm run build",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "ngrok": "^5.0.0-beta.2",
+        "semver": ">=7.5.2"
+    },
+    "devDependencies": {
+        "axios": "^0.25",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "nodemon": "^2.0.22",
+        "postcss": "^8.1.14",
+        "semver": ">=7.5.2"
+    }
+}

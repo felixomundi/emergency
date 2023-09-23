@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('users_allowances', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId("user_id")->constrained()->onDelete("cascade");
+            $table ->tinyInteger("status")->default("0")->comment("0 = Active, 1=Inactive");
+            $table->string("allowance_name");
+            $table->string("effective_date");
+            $table->string("closing_date");
+            $table->float("amount",8,2,true)->default("0.00");
+            $table->bigInteger("created_by")->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('users_allowances');
+    }
+};
