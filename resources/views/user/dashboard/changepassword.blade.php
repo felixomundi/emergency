@@ -1,6 +1,6 @@
-@extends("layouts.reception")
+@extends("layouts.user")
 @section("seo")
-<title>Reception Change Password | {{config("app.name")}} </title>
+<title>Change Password | {{config("app.name")}} </title>
 @endsection
 @section("styles")
 
@@ -44,7 +44,7 @@
 
 @include("layouts.messages")
 
-<form  autocomplete="off" method="POST" action="{{ url("/reception/change-password") }}">
+<form  autocomplete="off" method="POST" action="{{ url("/user/change-password") }}">
 @csrf
 {{-- card-body --}}
 <div class="card-body">

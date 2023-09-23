@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Helpers\Mpesa;
 use App\Mail\ContactMail;
 use App\Models\EmailContacts;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +17,9 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware(['auth', 'verified'])->except(["index"]);
+        $this->middleware(['auth', 
+        //'verified'
+        ])->except(["index"]);
     }
     public function index()
         {

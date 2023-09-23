@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Response;
 use App\Http\Requests\SaveUserFormRequest;
 
 class UsersController extends Controller
@@ -21,28 +20,12 @@ class UsersController extends Controller
     }
     public function store(SaveUserFormRequest $request){
 
-        $data = $request ->validated();
-        if($request->hasFile("image")){
-            $image = $data["image"];
-            $imagename = time() .'.'.$image->getClientOriginalExtension();
-            $image->move(public_path('users/'),$imagename);
-        }
-        else{
-
-            $imagename = "";
-        }
-
+        $data = $request ->validated();       
         User::create([
             "name"=>$data["name"],
             "email"=>$data["email"],
             "role_as"=> $data["role_as"],
-            "password"=>Hash::make($data['password']),
-            "father_name"=>$data["father_name"],
-            "father_occupation"=>$data["father_occupation"],
-            "father_phone_number"=>$data["father_phone_number"],
-            "mother_name"=>$data["mother_name"],
-            "mother_occupation"=>$data["mother_occupation"],
-            "mother_phone_number"=>$data["father_phone_number"],
+            "password"=>Hash::make($data['password']),            
             "phone"=>$data["phone"],
             "county"=>$data["county"],
             "district"=>$data["district"],
@@ -51,7 +34,7 @@ class UsersController extends Controller
             "sub_location"=>$data["sub_location"],
             "gender"=>$data["gender"],
             "dob"=>$data["dob"],
-            "image"=>$imagename,
+            
         ]);
         return redirect("/admin/users")->with("success","User Saved Sucessfully");
     }

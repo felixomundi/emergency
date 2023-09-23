@@ -31,13 +31,34 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 <li class="nav-item">
-<a href="{{ route("users") }}" class="nav-link">
-<i class="nav-icon fa-solid fa-users"></i>
+<a href="{{ route('users') }}" class="nav-link">
+<i class="nav-icon"></i>
 <p>
 Users
 </p>
 </a>
 </li>
+
+<li class="nav-item">
+<a href="/admin/counties" class="nav-link">
+<i class="nav-icon"></i>
+<p>
+Counties
+</p>
+</a>
+</li>
+
+
+<li class="nav-item">
+<a href="/admin/sub-counties" class="nav-link">
+<i class="nav-icon"></i>
+<p>
+Sub Counties
+</p>
+</a>
+</li>
+
+
 
 
 <li class="nav-item">
@@ -70,8 +91,6 @@ Account
 </ul>
 
 </li>
-
-
 
 
 <li class="nav-item">

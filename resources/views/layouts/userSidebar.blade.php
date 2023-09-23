@@ -11,14 +11,7 @@
 <div class="sidebar">
 <!-- Sidebar user panel (optional) -->
 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-<div class="image">
-@if (Auth::user()->image)
-<img src="/users/{{ Auth::user()->image }}" class="img-circle elevation-2" alt="{{ Auth::user()->name }}" style="width:30px;height:30px">
-@else
-<img src="{{ asset("school/dist/img/user2-160x160.jpg") }}" class="img-circle elevation-2" alt="{{ Auth::user()->name }}" style="height:30px;width:30px">
-@endif
 
-</div>
 <div class="info">
 <a href="/user/profile" class="d-block">{{ Auth::user()->name }}</a>
 </div>
@@ -30,31 +23,15 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
 
-<li class="nav-item">
-<a href="#" class="nav-link">
-<i class="nav-icon fa-solid fa-users"></i>
-<p>
-Students
-<i class="fas fa-angle-left right"></i>
-</p>
-</a>
-<ul class="nav nav-treeview">
 
 <li class="nav-item">
-<a href="#" class="nav-link">
-<i class="nav-icon fa-solid fa-plus-circle"></i>
-<p>Manage Students</p>
+<a href="/user/cases" class="nav-link">
+<i class="nav-icon fa-solid fa-file"></i>
+<p>Cases</p>
 </a>
 </li>
 
-<li class="nav-item">
-<a href="#" class="nav-link">
-<i class="nav-icon fa-solid fa-clock"></i>
-<p>Student Attendance</p>
-</a>
-</li>
-</ul>
-</li>
+
 
 
 <li class="nav-item">
@@ -76,7 +53,7 @@ Account
 
 
 <li class="nav-item">
-<a href="/user/change_password" class="nav-link">
+<a href="/user/change-password" class="nav-link">
 <i class="fa fa-lock nav-icon"></i>
 <p>Update Password</p>
 </a>

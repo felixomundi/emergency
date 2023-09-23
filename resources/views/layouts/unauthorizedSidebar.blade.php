@@ -41,7 +41,7 @@
 
 @if (Route::has('register'))
 <li class="nav-item">
-<a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+<a class="nav-link" href="{{ route('register') }}"> <i class="fa fa-plus-circle nav-icon"></i> {{ __('Register') }}</a>
 </li>
 @endif
 @else
@@ -52,14 +52,9 @@
 <a class="nav-link" href="/contact"><i class="fa fa-envelope nav-icon"></i> Contact Us</a>
 </li>
 @elseif (Auth::user()->role_as == 1 && Auth::user()->status == 0)
-<li class="nav-item"><a class="nav-link" href="/admin/dashboard"><i class="fa fa-dashboard nav-icon"></i> Admin Dashboard</a></li>
-@elseif(Auth::user()->role_as == 3 && Auth::user()->status == 0)
-<li class="nav-item"><a class="nav-link" href="/manager/dashboard"><i class="fa fa-dashboard nav-icon"></i> Manager Dashboard</a></li>
-@elseif(Auth::user()->role_as == 2 && Auth::user()->status == 0)
-<li class="nav-item"><a class="nav-link" href="/accounts/dashboard"><i class="fa fa-dashboard nav-icon"></i> Account Dashboard</a></li>
-
+<li class="nav-item"><a class="nav-link" href="/admin/dashboard"><i class="fa fa-dashboard nav-icon"></i>Dashboard</a></li>
 @elseif(Auth::user()->role_as == 0 && Auth::user()->status == 0)
-<li class="nav-item"><a class="nav-link" href="/user/dashboard"><i class="fa fa-dashboard nav-icon"></i> User Dashboard</a></li>
+<li class="nav-item"><a class="nav-link" href="/user/dashboard"><i class="fa fa-dashboard nav-icon"></i> Dashboard</a></li>
 @endif
 
 

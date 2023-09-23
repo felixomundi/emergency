@@ -1,6 +1,6 @@
 @extends("layouts.dashboard")
 @section("seo")
-<title>Admin All Users  | {{config("app.name")}}</title>
+<title>Cases | {{config("app.name")}}</title>
 @endsection
 @section("styles")
 
@@ -16,12 +16,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>All System Users</h1>
+            <h1>Cases</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">System Users</li>
+              <li class="breadcrumb-item active">Cases</li>
             </ol>
           </div>
         </div>
@@ -39,7 +39,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
-                <a href="/admin/users/create" class="btn btn-primary"> <i class="fa fa-plus-circle"></i> Create New User</a>
+                <a href="/user/cases/create" class="btn btn-primary"> <i class="fa fa-plus-circle"></i> Report New Case</a>
                 </h3>
               </div>
               <!-- /.card-header -->
@@ -58,7 +58,7 @@
                   </thead>
                   <tbody>
 
-                  @forelse ($users as $key => $user )
+              {{--    @forelse ($users as $key => $user )
                   <tr>
                     <td>{{ $key + 1 }}</td>
                     <td>{{ $user->name }}</td>
@@ -92,7 +92,7 @@
                   @empty
                   <tr><td colspan="7" class="text-center">No Users Found</td></tr>
                   @endforelse
-
+                --}}
                   </tbody>
                   <tfoot>
                   <tr>

@@ -39,7 +39,7 @@
             @enderror
         </div>
         <div class="input-group mb-3">
-          <input id="password" type="password" placeholder="Your Password" value="Fo123456"  class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+          <input id="password" type="password" placeholder="Your Password" value="12345678"  class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
           <div class="input-group-append">
             <div class="input-group-text">

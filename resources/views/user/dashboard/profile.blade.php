@@ -1,6 +1,6 @@
-@extends("layouts.reception")
+@extends("layouts.user")
 @section("seo")
-<title>Reception Profile | {{config("app.name")}} </title>
+<title>Profile | {{config("app.name")}} </title>
 @endsection
 @section("styles")
 
@@ -45,7 +45,7 @@
         @include("layouts.messages")
 
         <form class="mt-3" autocomplete="off" method="post"
-        action="{{url("/reception/profile")}}"
+        action="{{url('/user/profile')}}"
         novalidate="novalidate" enctype="multipart/form-data">
          @csrf
 
@@ -55,11 +55,7 @@
         <li class="nav-item">
             <a class="nav-link active" id="pills-basic-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Basic Details</a>
         </li>
-       <li class="nav-item">
-            <a class="nav-link" id="pills-cv-tab" data-toggle="pill" href="#pills-cv" role="tab" aria-controls="pills-cv" aria-selected="false">Employment</a>
-        </li>
-
-
+    
         <li class="nav-item">
             <a class="nav-link" id="pills-parent-tab" data-toggle="pill" href="#pills-parent" role="tab" aria-controls="pills-parent" aria-selected="false">Parent Details</a>
         </li>
@@ -108,65 +104,7 @@
         @enderror
         </div>
 
-        <div class="form-group col-md-6">
-        <label for="staff_number">Staff No </label>
-        <input readonly value="{{ $user->staff ? $user->staff->staff_number : ""}}"    class="form-control"    id="staff_number">
-          </div>
-
-
-        <div class="form-group col-md-6">
-        <label for="gender">Gender </label>
-        <select readonly  class="form-control @error('gender') is-invalid @enderror" name="gender" id="gender" >
-         <option value="Male" {{ $user->gender == 'Male' ? "selected" : "" }}>Male</option>
-         <option value="Female" {{$user->gender == 'Female' ? "selected" : "" }}>Female</option>
-        </select>
-        @error('gender')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-        @enderror
-
-
         </div>
-
-
-        <div class="form-group col-md-6">
-        <label for="image">Photo </label>
-        <input type="file" name="image"  class="form-control @error('image') is-invalid @enderror" id="image" accept="image/png, image/jpeg, image/jpg"/>
-        @error('image')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-        @enderror
-
-        </div>
-
-
-
-
-         <div class="form-group col-md-6">
-        <label for="branch_id">Your Branch </label>
-        <input  readonly class="form-control" type="text"  value="{{ $user->staff ? $user->staff->_branch->title : "" }}" />
-
-        </div>
-
-        <div class="form-group col-md-6">
-        <label for="dob">DOB</label>
-        <input type="date" readonly value="{{ $user->dob }}"  name="dob" class="form-control @error('dob') is-invalid @enderror" id="dob"/>
-        @error('dob')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-        @enderror
-        </div>
-
-
-
-        </div>
-
-
-        {{-- <div class="row"></div>
-        <div class="row"></div> --}}
 
         </div>
 
@@ -178,60 +116,6 @@
         </div>
 
 
-        {{-- cv tab --}}
- <div class="tab-pane fade" id="pills-cv" role="tabpanel" aria-labelledby="pills-cv-tab">
- {{-- card-body --}}
-        <div class="card-body">
-
-        <div class="row">
-        <div class="form-group col-md-12">
-        <label for="date_joined">Date Joined </label>
-        <input type="date" name="date_joined" readonly value="{{ $user->staff ? $user->staff->date_joined : ""}}" class="form-control @error('date_joined') is-invalid @enderror" id="date_joined"/>
-        @error('date_joined')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-        @enderror
-        </div>
-
-       <div class="form-group col-md-12">
-        <label for="experience">Experience</label>
-        <textarea  readonly name="experience"  class="form-control @error('experience') is-invalid @enderror" id="experience">
-     {{ $user->staff ? $user->staff->experience : ""}}
-        </textarea>
-        @error('experience')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-        @enderror
-        </div>
-
-  <div class="form-group col-md-12">
-        <label for="qualification">Qualification</label>
-        <textarea name="qualification"  readonly  class="form-control @error('qualification') is-invalid @enderror" id="qualification">
-     {{ $user->staff ? $user->staff->qualification : "" }}
-        </textarea>
-        @error('qualification')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-        @enderror
-        </div>
-         </div>
-
-
-     </div>
-        {{-- card-body --}}
- <div class="card-footer">
-         <a  class="btn btn-primary float-right btnNext">Next &#8594;</a>
-        <a  class="btn btn-primary float-left btnPrevious">&#8592; Previous</a>
-
-
-        </div>
-
- </div>
-
-        {{-- cv tab --}}
 
         {{-- parent tab --}}
         <div class="tab-pane fade" id="pills-parent" role="tabpanel" aria-labelledby="pills-parent-tab">

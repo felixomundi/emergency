@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommonUser\CasesController;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -8,7 +9,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EmailContactController;
 use App\Http\Controllers\CommonUser\UserDashboardController;
 
-Auth::routes(["verify" => true,"register"=>false]);
+Auth::routes(["verify" => true,"register"=>true]);
 
 Route::get("/", [App\Http\Controllers\HomeController::class, 'index']);
 
@@ -59,6 +60,11 @@ Route::post("/profile", [UserDashboardController::class, "updateProfile"]);
 Route::get("/change-password", [UserDashboardController::class, "changePassword"]);
 Route::post("/change-password", [UserDashboardController::class, "updatePassword"]);
 
+Route::controller(CasesController::class)->group(function () {
+Route::get("/cases", "index");
+Route::get("/cases/create", "create");
+Route::post("/cases/create", "create");
+});
 
 
 });
