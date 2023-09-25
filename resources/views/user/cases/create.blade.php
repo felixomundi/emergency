@@ -75,10 +75,9 @@
 <label for="sub_county">Sub County</span></label>
 <select  class="form-control @error('sub_county') is-invalid @enderror" name="sub_county" id="sub_county" >
 <option value="">Select Sub County</option>
-<option value="0" {{old('county') == '0' ? "selected" : ""}}>Active</option>
-<option value="1" {{old('county') == '1' ? "selected" : "" }}>Inactive</option>
+
 </select>
-@error('county')
+@error('sub_county')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
 </span>
@@ -102,9 +101,9 @@ id="title" name="title" placeholder="Enter Case Title" value="{{ old('title') }}
 
 <div class="form-group col-md-12">
 <label for="message">Message</label>
-<textarea  name="message" class="form-control @error('message') is-invalid @enderror" id="message" placeholder="Enter Case Message">
+<textarea  name="message_case" class="form-control @error('message_case') is-invalid @enderror"  id="message_case" placeholder="Enter Case Message">
 </textarea>
-@error('message')
+@error('message_case')
 <span class="invalid-feedback" role="alert">
 <strong>{{ $message }}</strong>
 </span>
@@ -144,7 +143,35 @@ id="title" name="title" placeholder="Enter Case Title" value="{{ old('title') }}
 
 @endsection
 @section("scripts")
-
+<script src="/assets/js/axios.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#county").on("change", async function () {
+          let id = $('#county').val();
+          if(id){
+            try {
+            let url = "/user/cases/counties/"+id;
+            const response = await axios.get(url);           
+            if(response.data.subcounties.length > 0){
+              var html = "<option value=''>Select Sub County</option>";
+              $.each(response.data.subcounties, function (key, value) {
+              html += '<option {{old("county") === "'+ value.id +'" ? "selected": "" }} value="' + value.id + '">' + value.name + '</option>';
+              });
+              $("#sub_county").html(html);
+            }
+            else{
+              var html = "<option value=''>No Sub County available</option>";
+              $("#sub_county").html(html);
+            }
+           } catch (error) {
+            
+           }
+          }else{
+            
+          }
+        })
+    })
+</script>
 
 
 @endsection

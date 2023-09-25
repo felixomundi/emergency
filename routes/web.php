@@ -81,7 +81,10 @@ Route::post("/change-password", [UserDashboardController::class, "updatePassword
 Route::controller(CasesController::class)->group(function () {
 Route::get("/cases", "index");
 Route::get("/cases/create", "create");
-Route::post("/cases/create", "create");
+Route::post("/cases/create", "store");
+Route::get("/cases/counties/{id}", "getSubcountiesByCountyId");
+Route::get("/cases/completed", "completed");
+Route::get("/cases/active", "active");
 });
 
 

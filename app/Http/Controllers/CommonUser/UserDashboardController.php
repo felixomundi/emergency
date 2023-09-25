@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\CommonUser;
 
+use App\Models\Cases;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -12,7 +13,16 @@ use App\Http\Requests\PasswordUpdateFormRequest;
 class UserDashboardController extends Controller
 {
     public function index(){
-        return view("user.dashboard.index");
+        $userdata = [
+            "user_id"=>auth()->user()->id,            
+        ];
+        $data["activecases"] = Cases::where($userdata)->whereNot("status", "Completed")->get()->count();    
+        $fdata = [
+            "user_id"=>auth()->user()->id,
+            "status"=>"Completed",
+        ];
+        $data["completedcases"] = Cases::where($fdata)->get()->count(); 
+        return view("user.dashboard.index", $data);
     }
     public function changePassword(){
       return view("user.dashboard.changepassword");

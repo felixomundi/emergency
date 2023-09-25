@@ -1,6 +1,6 @@
 @extends("layouts.user")
 @section("seo")
-<title>Cases | {{config("app.name")}}</title>
+<title>Active Cases | {{config("app.name")}}</title>
 @endsection
 @section("styles")
 
@@ -16,12 +16,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Cases</h1>
+            <h1>Active Cases</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Cases</li>
+              <li class="breadcrumb-item active">Active Cases</li>
             </ol>
           </div>
         </div>
@@ -39,7 +39,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
-                <a href="/user/cases/create" class="btn btn-primary"> <i class="fa fa-plus-circle"></i> Report New Case</a>
+                <a href="/user/cases/create" class="btn btn-primary"> <i class="fa fa-backward"></i> Back To Cases</a>
                 </h3>
               </div>
               <!-- /.card-header -->
