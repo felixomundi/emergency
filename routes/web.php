@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CountyController;
+use App\Http\Controllers\Admin\AdminCasesController;
 use App\Http\Controllers\CommonUser\CasesController;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Auth;
@@ -64,6 +65,15 @@ Route::controller(SubCountyController::class)->group(function () {
     Route::get("/sub-counties/{id}/edit", "edit");
     Route::put("/sub-counties/{id}/edit", "update");    
 });
+
+Route::controller(AdminCasesController::class)->group(function () {
+    Route::get("/cases", "index");
+    Route::get("/cases/edit/{id}", "edit");
+    Route::put("/cases/edit/{id}", "update");
+    Route::get("/cases/delete/{id}", "destroy");
+    Route::get("/cases/active", "active");
+    Route::get("/cases/complete", "completed");
+    });
 
 
 });

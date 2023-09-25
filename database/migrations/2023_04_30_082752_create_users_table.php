@@ -23,7 +23,12 @@ return new class extends Migration
             $table->string('password');
             $table->string("phone")->unique()->nullable();
             $table->string("gender")->nullable();
-            $table->bigInteger("identity_number")->unique()->nullable();            
+            $table->bigInteger("identity_number")->unique()->nullable();        
+            $table->string("county")->nullable();
+            $table->string("division")->nullable();
+            $table->string("district")->nullable();
+            $table->string("location")->nullable();
+            $table->string("sub_location")->nullable();    
 
             $table->rememberToken();
             $table->timestamps();

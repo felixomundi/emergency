@@ -102,6 +102,7 @@ id="title" name="title" placeholder="Enter Case Title" value="{{ old('title') }}
 <div class="form-group col-md-12">
 <label for="message">Message</label>
 <textarea  name="message_case" class="form-control @error('message_case') is-invalid @enderror"  id="message_case" placeholder="Enter Case Message">
+{{old("message_case")}}
 </textarea>
 @error('message_case')
 <span class="invalid-feedback" role="alert">

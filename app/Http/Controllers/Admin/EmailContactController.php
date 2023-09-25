@@ -45,8 +45,6 @@ class EmailContactController extends Controller
         $contact->status = $request->status;
         $contact->save();
 
-        // Mail::to()->send(new EmailReplyMailable());
-
         return redirect()->back()->with("success", "Reply message sent successfully");
 
         }else{

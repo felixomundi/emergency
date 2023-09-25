@@ -12,4 +12,7 @@ class County extends Model
     protected $fillable = [
         "name",
     ];
+    public function subcounty(){
+        return $this->hasMany(SubCounty::class, "county_id", "id");
+    }
 }

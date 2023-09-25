@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Models\Cases;
 use App\Models\User;
 use App\Models\Staff;
 use App\Models\Units;
@@ -18,8 +19,13 @@ use App\Http\Requests\PasswordUpdateFormRequest;
 class DashboardController extends Controller
 {
     public function index(){
-
-        return view("admin.dashboard.index");
+        $data["users"] = User::all()->count();
+        $fdata = [            
+            "status"=>"Completed",
+        ];
+        $data["completecases"] = Cases::where($fdata)->get()->count();
+        $data["activecases"] = Cases::whereNot("status", "Completed")->get()->count();   
+        return view("admin.dashboard.index", $data);
     }
 
 
@@ -49,35 +55,6 @@ public function updatePassword(PasswordUpdateFormRequest $request){
 
     public function profile(){
         return view("admin.dashboard.profile");
-
-    }
-
-    public function profileUpdate(AdminPhotoUpdateRequest $request){
-        $user = User::find(Auth::user()->id);
-       if($user){
-        $fileName = "";
-        if ($request->hasFile("image")){
-        $path = public_path("users/" . $user->image);
-        if(File::exists($path)){
-        File::delete($path);
-        }
-        $file = $request->file("image");
-        $fileName = time() . "." . $file -> getClientOriginalExtension();
-        $file -> move(public_path("users/"), $fileName);
-
-        }else
-        {
-            $fileName = $user -> image;
-        }
-        $user->update([
-            "image"=>$fileName,
-        ]);
-        return redirect()->back()->with("success","Your Profile Photo is Updated Sucessfully");
-       }
-       else{
-        Auth::logout();
-        return redirect(url("/"));
-    }
 
     }
 

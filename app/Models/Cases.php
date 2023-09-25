@@ -16,4 +16,13 @@ class Cases extends Model
         "title",
         "message",
     ];
+ 
+    public function user(){
+        return $this->belongsTo(User::class, "user_id", "id");
+    }
+    public function subcounty(){
+        return $this->belongsTo(SubCounty::class, "sub_county_id", "id");
+    }
+    
+
 }

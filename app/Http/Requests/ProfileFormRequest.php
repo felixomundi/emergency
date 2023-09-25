@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class DepartmentsFormRequest extends FormRequest
+class ProfileFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,26 +24,20 @@ class DepartmentsFormRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = [
-            "status"=> ["required", "integer"],
-
-        ];
-
-        if($this->getMethod() == "POST"){
-            $rules += [
-                "name" =>["required", "string","unique:departments,name",],
-            ];
-        }
-
-        if($this->getMethod() == "PUT"){
-          $rules += [
-          "name" =>  [
+        return [
+            "identity_number" =>[
                 "required",
                 "string",
-                Rule::unique("departments")->ignore($this->id),  ],
-
-            ];
-        }
-        return $rules;
+                "min:7",
+                "max:8",
+                Rule::unique('users')->ignore(\Request::get('userId')),
+             ],
+             "county"=>"required",
+             "sub_county"=>"required",
+             "district"=>"required",
+             "division"=>"required",
+             "location"=>"required",
+             "sub_location"=>"required",
+        ];
     }
 }

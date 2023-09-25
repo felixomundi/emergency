@@ -39,6 +39,17 @@ Users
 </a>
 </li>
 
+
+
+<li class="nav-item">
+<a href="/admin/cases" class="nav-link">
+<i class="nav-icon"></i>
+<p>
+Cases
+</p>
+</a>
+</li>
+
 <li class="nav-item">
 <a href="/admin/counties" class="nav-link">
 <i class="nav-icon"></i>

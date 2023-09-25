@@ -32,7 +32,7 @@ class ContactMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: "Contact For ". $this->contact->subject. " at Kadesea Agency",
+            subject: "Contact For ". $this->contact->subject. "",
         );
     }
 

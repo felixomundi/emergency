@@ -29,6 +29,11 @@ class User extends Authenticatable
         "phone",
         "gender",
         "identity_number",
+        "county",
+        "district",
+        "division",
+        "location",
+        "sub_location",
        
 
     ];

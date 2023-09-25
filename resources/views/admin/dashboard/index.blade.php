@@ -33,14 +33,14 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>23</h3>
+                <h3>{{$activecases}}</h3>
 
-                <p>Courses</p>
+                <p>Active Cases</p>
               </div>
               <div class="icon">
-                <i class="fa fa-list"></i>
+                <i class="fa fa-user"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/admin/cases/active" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -48,79 +48,35 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>#</h3>
+                <h3>{{$completecases}}</h3>
 
-                <p>Units</p>
+                <p>Complete Cases</p>
               </div>
               <div class="icon">
                 <i class="fa fa-book"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/admin/cases/complete" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>23</h3>
-
-                <p>User Registrations</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>23</h3>
-
-                <p>Branches</p>
-              </div>
-              <div class="icon">
-                <i class="fa-solid fa-code-branch"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
+         
           <!-- ./col -->
         <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>17</h3>
+                <h3>{{$users}}</h3>
 
-                <p>Students</p>
+                <p>Users</p>
               </div>
               <div class="icon">
                 <i class="fa-solid fa-users"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="/admin/users" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
 
-           <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>10</h3>
-
-                <p>Staff</p>
-              </div>
-              <div class="icon">
-                <i class="fa-solid fa-users"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-
+         
         </div>
         <!-- /.row -->
 
