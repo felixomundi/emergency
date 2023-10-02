@@ -1,10 +1,12 @@
 # How to run the system
 - Install git in your machine
+- open your terminal and run 
+   ## git clone https://github.com/felixomundi/emergency.git
 - Install composer in your machine
 - Install wamp
 - Add php version 8.2 or higher to environmental variables.
 - Create a database called emergency
-- Import the above database or run 
+- Import the above database or optionally run 
     ## php artisan migrate
 # Optionally
 - Create app passwords in gmail add your details in the .env file under
