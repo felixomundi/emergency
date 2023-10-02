@@ -3,6 +3,7 @@
 - open your terminal and run 
    ## git clone https://github.com/felixomundi/emergency.git
 - Install composer in your machine
+- Run composer install or composer update
 - Install wamp
 - Add php version 8.2 or higher to environmental variables.
 - Create a database called emergency
