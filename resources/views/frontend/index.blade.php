@@ -69,13 +69,13 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img class="d-block w-100" src="/logo/2.avif"  height="500px" alt="First slide">
+                <img class="d-block w-100" src="/logo/police.jpeg"  height="500px" alt="First slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="/logo/coding.avif" height="500px"  alt="Second slide">
+                <img class="d-block w-100" src="/logo/police-2.jpeg" height="500px"  alt="Second slide">
               </div>
               <div class="carousel-item">
-                <img class="d-block w-100" src="/logo/1.avif" height="500px" alt="Third slide">
+                <img class="d-block w-100" src="/logo/logo.jpg" height="500px"  alt="Third slide">
               </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

@@ -1,0 +1,15 @@
+# How to run the system
+- Install git in your machine
+- Install composer in your machine
+- Install wamp
+- Add php version 8.2 or higher to environmental variables.
+- Create a database called emergency
+- Import the above database or run 
+    ## php artisan migrate
+# Optionally
+- Create app passwords in gmail add your details in the .env file under
+   1 MAIL_USERNAME=
+   2 MAIL_PASSWORD= 
+- Run this command in the terminal 
+    ## php artisan serve   
+- Visit the website over browser in http://localhost:8000
