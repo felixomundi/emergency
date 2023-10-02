@@ -84,7 +84,6 @@ Route::controller(AdminCasesController::class)->group(function () {
 Route::prefix("user")->middleware(["auth", "isUser"])->group(function(){
 Route::get("/dashboard", [UserDashboardController::class, "index"]);
 Route::get("/profile", [UserDashboardController::class, "profile"]);
-Route::post("/profile", [UserDashboardController::class, "updateProfile"]);
 Route::get("/change-password", [UserDashboardController::class, "changePassword"]);
 Route::post("/change-password", [UserDashboardController::class, "updatePassword"]);
 

@@ -47,26 +47,4 @@ class UserDashboardController extends Controller
         $user = User::where("id", Auth::user()->id)->where("role_as", "0")->first();
         return view("user.dashboard.profile", compact("user"));
     }
-
-    public function updateprofile(ProfileFormRequest $request){
-        dd($request);
-        // $user = User::where("id", Auth::user()->id)->where("role_as", "0")->first();
-        // if($user){
-        //     $user->update([
-        //         "identity_number"=>$request->identity_number,
-        //         "district"=>$request->district,
-        //         "division"=>$request->division,
-        //         "location"=>$request->location,
-        //         "sub_location"=>$request->sub_location,
-        //         "county"=>$request->county,
-        //     ]);
-        //     return redirect("/user/profile")->with("success", "Profile Updated Successfully");
-        // }else{
-        //     Auth::logout();
-        //     return redirect("/login");
-        // }
-
-       
-    }
-
 }
